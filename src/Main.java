@@ -13,7 +13,6 @@ public class Main {
 
     while (true) {
       util.printALine();
-
       int userChoice = util.userChoice( "see the TodoList:", "create a new todo:", "delete a todo:");
 
       switch (userChoice) {

@@ -3,7 +3,6 @@ package Util;
 import java.util.Scanner;
 
 public class Util {
-  Scanner scanner = new Scanner(System.in);
   public String getALine() {
     return "------------------------------------------------------------";
   }
@@ -22,6 +21,7 @@ public class Util {
     System.out.println("2. No, thanks");
     System.out.print("Choice one: ");
 
+    Scanner scanner = new Scanner(System.in);
     return scanner.nextInt();
   }
 
@@ -32,6 +32,7 @@ public class Util {
 
     System.out.print("Choice one: ");
 
+    Scanner scanner = new Scanner(System.in);
     return scanner.nextInt();
   }
 }

@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Actions {
   Util util = new Util();
+
   public void viewTodoList(ArrayList<String> todolist) {
     if (todolist.isEmpty()) {
       util.printToAlertEmpty();
