@@ -1,7 +1,3 @@
-Here's a README template for your TodoList project:
-
----
-
 # TodoList Project
 
 This project is a simple TodoList application implemented in Java. It allows users to manage their tasks by viewing existing tasks, deleting tasks, and creating new tasks.
