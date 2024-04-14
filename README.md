@@ -1,5 +1,6 @@
 # TodoList Project
-![todolist v1](https://github.com/mirjalol-jabborov/todolist_using_java/assets/69468044/fe7f5dd9-05fb-48c1-8b7a-94af15d2f2e8)
+![todolist v1](https://github.com/mirjalol-jabborov/todolist_using_java/assets/69468044/8b31ce86-a793-4b8c-9628-eee83943e000)
+
 
 This project is a simple TodoList application implemented in Java. It allows users to manage their tasks by viewing existing tasks, deleting tasks, and creating new tasks.
 
