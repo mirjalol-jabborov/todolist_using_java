@@ -23,5 +23,5 @@ This project is a simple TodoList application implemented in Java. It allows use
 ## Future Versions Plan
 
 - **v1.2**: Adding the Clear All Tasks Function and add the Switch Task Locations feature.
-- **v1.2**: Ability to Modify Task and Add Detailed Information to Each Task (Description, Created on, Modified on).
-- **v1.3**: Ability to Grouping Tasks and view grouped tasks
+- **v1.3**: Ability to Modify Task and Add Detailed Information to Each Task (Description, Created on, Modified on).
+- **v1.4**: Ability to Grouping Tasks and view grouped tasks
