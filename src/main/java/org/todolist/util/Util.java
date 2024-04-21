@@ -3,14 +3,11 @@ package org.todolist.util;
 import java.util.Scanner;
 
 public class Util {
-  public String getALine() {
-    return "------------------------------------------------------------";
-  }
-
   public void printALine() {
-    System.out.println(getALine());
+    System.out.println("------------------------------------------------------------");
   }
-
+//consolidated getaline and printaline into one method
+  
   public void printToAlertEmpty() {
     System.out.println("Your TodoList is empty!");
   }
