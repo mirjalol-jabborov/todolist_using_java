@@ -14,17 +14,7 @@ public class Todolist {
   }
 
   public static class Task {
-//    private static int last_id = 0;
-//    private int task_id;
     private String title;
-
-//    public Task() {
-//      last_id++;
-//    }
-
-//    public int getTask_id() {
-//      return task_id;
-//    }
 
     public void setTitle(String title) {
       this.title = title;
@@ -33,7 +23,6 @@ public class Todolist {
     public String getTitle() {
       return title;
     }
-
   }
 
   @Override
