@@ -1,16 +1,17 @@
 package org.todolist;
 
 import org.todolist.actions.Actions;
+import org.todolist.db.Todolist;
 import org.todolist.util.Util;
 
-import java.util.ArrayList;
+import java.io.*;
+import java.util.List;
 
 public class Main {
-  public static void main(String[] args) {
-    ArrayList<String> todolist = new ArrayList<>();
-
+  public static void main(String[] args) throws FileNotFoundException {
     Util util = new Util();
     Actions actions = new Actions();
+    List<Todolist.Task> tasks = new Todolist().getTasks();
 
     while (true) {
       util.printALine();
@@ -18,13 +19,13 @@ public class Main {
 
       switch (userChoice) {
         case 1:
-          actions.viewTodoList(todolist);
+          actions.viewTodoList(tasks);
           break;
         case 2:
-          todolist = actions.addNewTodo(todolist);
+          tasks = actions.addNewTodo(tasks);
           break;
         case 3:
-          todolist = actions.deleteTodoWithIndex(todolist);
+          tasks = actions.deleteTodoWithIndex(tasks);
           break;
       }
     }
