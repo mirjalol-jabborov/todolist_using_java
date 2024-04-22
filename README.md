@@ -22,7 +22,7 @@ This project is a simple TodoList application implemented in Java. It allows use
 
 ## Future Versions Plan
 
-- **v2.0**: Change structure to Maven and Switching from Arraylist to Json file to add memorability to todos
+- **v2.0**: Change structure to Maven and Switching From simple arraylist to List of of Task class
 - **v2.1**: Adding the Clear All Tasks Function and add the Switch Task Locations feature.
 - **v2.2**: Ability to Modify Task and Add Detailed Information to Each Task (Description, Created on, Modified on).
 - **v2.3**: Ability to Grouping Tasks and view grouped tasks
