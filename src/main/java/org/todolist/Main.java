@@ -25,7 +25,7 @@ public class Main {
           tasks = actions.addNewTodo(tasks);
           break;
         case 3:
-          tasks = actions.deleteTodoWithIndex(tasks);
+          tasks = actions.deleteTodos(tasks);
           break;
       }
     }

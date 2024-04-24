@@ -57,17 +57,12 @@ public class Actions {
     task.setTitle(todoTitle);
     tasks.add(task);
 
-    System.out.println("new todo created successfully!");
+    System.out.println("New todo created successfully!");
 
     return tasks;
   }
 
-  public List<Todolist.Task> deleteTodoWithIndex(List<Todolist.Task> tasks) throws FileNotFoundException {
-    if (tasks.isEmpty()) {
-      util.printToAlertEmpty();
-      return tasks;
-    }
-
+  public List<Todolist.Task> deleteTodoWithIndex(List<Todolist.Task> tasks) {
     viewTodoList(tasks);
     util.printALine();
     System.out.print("Type the Todo index you want to delete: ");
@@ -90,7 +85,41 @@ public class Actions {
 
     tasks.remove(index);
 
-    System.out.println("Todo deleted successfully!");
+    return tasks;
+  }
+  
+  public List<Todolist.Task> deleteTodos(List<Todolist.Task> tasks) {
+    if (tasks.isEmpty()) {
+      util.printToAlertEmpty();
+      return tasks;
+    }
+
+    util.printALine();
+    System.out.println("Which way you want to delete?");
+    int userChoice = util.userChoice( "Delete with index:", "Delete all todos");
+
+    switch (userChoice) {
+      case 1:
+        tasks = deleteTodoWithIndex(tasks);
+        System.out.println("New todo created successfully!");
+        return tasks;
+      case 2:
+        tasks.clear();
+        System.out.println("All todos deleted.");
+        break;
+      default:
+        int userItemChoice = util.userChoice("You entered number! Would you like to re-enter it?");
+
+        switch (userItemChoice) {
+          case 1:
+            deleteTodos(tasks);
+            break;
+          default:
+            System.out.println("Creating a new Todo has been cancelled!");
+            break;
+        }
+        break;
+    }
 
     return tasks;
   }
