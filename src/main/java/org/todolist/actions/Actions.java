@@ -85,6 +85,8 @@ public class Actions {
 
     tasks.remove(index);
 
+    System.out.println("Todo deleted successfully!");
+
     return tasks;
   }
   
@@ -101,7 +103,6 @@ public class Actions {
     switch (userChoice) {
       case 1:
         tasks = deleteTodoWithIndex(tasks);
-        System.out.println("New todo created successfully!");
         return tasks;
       case 2:
         tasks.clear();
