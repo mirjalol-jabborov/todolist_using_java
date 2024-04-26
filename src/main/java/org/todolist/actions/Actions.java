@@ -116,7 +116,7 @@ public class Actions {
             deleteTodos(tasks);
             break;
           default:
-            System.out.println("Creating a new Todo has been cancelled!");
+            System.out.println("Deleting a Todo has been cancelled!");
             break;
         }
         break;
