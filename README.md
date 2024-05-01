@@ -24,5 +24,5 @@ This project is a simple TodoList application implemented in Java. It allows use
 
 ## Future Versions Plan
 
-- **v2.2**: Ability to Modify Task and Add Detailed Information to Each Task (Description, Created on, Modified on).
+- **v2.2**: Ability to Modify Task and Add Detailed Information to Each Task (Description).
 - **v2.3**: Ability to Grouping Tasks and view grouped tasks
