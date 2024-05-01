@@ -21,8 +21,8 @@ This project is a simple TodoList application implemented in Java. It allows use
 - **v1.1**: Includes the basic functionality of viewing tasks, deleting tasks using index, and creating new tasks.
 - **v2.0**: Change structure to Maven and Switching From simple arraylist to List of Task class
 - **v2.1**: Adding the Clear All Tasks feature.
+- **v2.2**: Ability to Modify Task and Add Detailed Information to Each Task (Description).
 
 ## Future Versions Plan
 
-- **v2.2**: Ability to Modify Task and Add Detailed Information to Each Task (Description).
 - **v2.3**: Ability to Grouping Tasks and view grouped tasks
