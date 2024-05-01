@@ -2,12 +2,13 @@
 ![todolist v1 - Copy](https://github.com/mirjalol-jabborov/todolist_using_java/assets/69468044/baa8e4dd-5286-4ef6-b865-e4975a856d30)
 
 
-This project is a simple TodoList application implemented in Java. It allows users to manage their tasks by viewing existing tasks, deleting tasks, and creating new tasks.
+This project is a simple TodoList application implemented in Java. It allows users to manage their tasks by viewing existing tasks, editing, deleting tasks, and creating new tasks.
 
 ## Features
 
-- View tasks: Users can see a list of all tasks currently in the TodoList.
+- View tasks: Users can see a list of all tasks currently in the TodoList. Each Todo contains detailed information.
 - Delete tasks: Users can remove tasks from the TodoList.
+- Edit tasks: Users can edit tasks in TodoList
 - Create new tasks: Users can add new tasks to the TodoList.
 
 ## Implementation Details
