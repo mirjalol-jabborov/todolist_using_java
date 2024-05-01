@@ -15,7 +15,7 @@ public class Main {
 
     while (true) {
       util.printALine();
-      int userChoice = util.userChoice( "see the TodoList:", "create a new todo:", "delete a todo:");
+      int userChoice = util.userChoice( "see the TodoList:", "create a new todo:", "delete a todo:", "edit a todo");
 
       switch (userChoice) {
         case 1:
@@ -27,6 +27,8 @@ public class Main {
         case 3:
           tasks = actions.deleteTodos(tasks);
           break;
+        case 4:
+          tasks = actions.editTodos(tasks);
       }
     }
   }

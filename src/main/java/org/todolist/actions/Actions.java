@@ -22,7 +22,7 @@ public class Actions {
     util.printALine();
 
     for (int i = 0; i < tasks.size(); i++) {
-      System.out.println(i + " - " + tasks.get(i).getTitle());
+      System.out.println(i + " - " + tasks.get(i).getTitle() + ": " + tasks.get(i).getDescription());
     }
 
     return tasks;
@@ -54,7 +54,11 @@ public class Actions {
       }
     }
 
+    System.out.print("Enter a description for the todo: ");
+    String todoDescription = scanner.nextLine();
+
     task.setTitle(todoTitle);
+    task.setDescription(todoDescription);
     tasks.add(task);
 
     System.out.println("New todo created successfully!");
@@ -78,7 +82,7 @@ public class Actions {
           deleteTodoWithIndex(tasks);
           return tasks;
         default:
-          System.out.println("Creating a new Todo has been cancelled!");
+          System.out.println("Deleting a new Todo has been cancelled!");
           return tasks;
       }
     }
@@ -124,4 +128,99 @@ public class Actions {
 
     return tasks;
   }
+
+  public List<Todolist.Task> editTodoName(List<Todolist.Task> tasks) {
+
+    viewTodoList(tasks);
+    util.printALine();
+    System.out.print("Type the Todo index you want to edit: ");
+
+    Scanner scanner = new Scanner(System.in);
+    int index = scanner.nextInt();
+    scanner.nextLine();
+
+    if(tasks.size() - 1 < index || index < 0){
+      int userChoice = util.userChoice("Invalid Index! Would you like to re-enter it?");
+
+      switch (userChoice) {
+        case 1:
+          editTodoName(tasks);
+          return tasks;
+        default:
+          System.out.println("Editing a new Todo has been cancelled!");
+          return tasks;
+      }
+    }
+
+    util.printALine();
+    System.out.print("Enter a new name for the todo: ");
+    String todoTitle = scanner.nextLine();
+    tasks.get(index).setTitle(todoTitle);
+    return tasks;
+  }
+
+  public List<Todolist.Task> editTodoDescription(List<Todolist.Task> tasks) {
+    viewTodoList(tasks);
+    util.printALine();
+    System.out.print("Type the Todo index you want to edit: ");
+
+    Scanner scanner = new Scanner(System.in);
+    int index = scanner.nextInt();
+    scanner.nextLine();
+
+    if(tasks.size() - 1 < index || index < 0){
+      int userChoice = util.userChoice("Invalid Index! Would you like to re-enter it?");
+
+      switch (userChoice) {
+        case 1:
+          editTodoName(tasks);
+          return tasks;
+        default:
+          System.out.println("Editing a new Todo has been cancelled!");
+          return tasks;
+      }
+    }
+
+    util.printALine();
+    System.out.print("Enter a new description for the todo: ");
+    String todoDescription = scanner.nextLine();
+    tasks.get(index).setDescription(todoDescription);
+    return tasks;
+  }
+
+  public List<Todolist.Task> editTodos(List<Todolist.Task> tasks) {
+
+    if (tasks.isEmpty()) {
+      util.printToAlertEmpty();
+      return tasks;
+    }
+
+    util.printALine();
+    System.out.println("What would you like to edit?");
+    int userChoice = util.userChoice( "Edit todo name", "Edit todo description");
+
+    switch (userChoice) {
+      case 1:
+        tasks = editTodoName(tasks);
+        return tasks;
+      case 2:
+        tasks = editTodoDescription(tasks);
+        return tasks;
+      default:
+        int userItemChoice = util.userChoice("You entered number! Would you like to re-enter it?");
+
+        switch (userItemChoice) {
+          case 1:
+            editTodos(tasks);
+            break;
+          default:
+            System.out.println("Editing a Todo has been cancelled!");
+            break;
+        }
+        break;
+    }
+
+    return tasks;
+  }
+
 }
