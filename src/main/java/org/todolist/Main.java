@@ -1,23 +1,20 @@
-package org.todolist;
+package github.test;
 
-import org.todolist.actions.Actions;
-import org.todolist.util.Util;
+import github.test.Actions;
+import github.test.Util;
 import java.util.ArrayList; 
-//import necessary packages
 
 public class Main {
   public static void main(String[] args) {
     ArrayList<String> todolist = new ArrayList<>(); 
-    //create an array list of strings
-
+    
+    boolean running = true; //added variable that keeps program running when true
     Util util = new Util();
     Actions actions = new Actions();
-    //creating objects of uil and action classes, for main menu
 
-    while (true) {
+    while (running) {
       util.printALine();
       int userChoice = util.userChoice( "see the TodoList:", "create a new todo:", "delete a todo:");
-        //prompt user for choice
       
       switch (userChoice) {
         case 1:
@@ -29,6 +26,9 @@ public class Main {
         case 3:
           todolist = actions.deleteTodoWithIndex(todolist);
           break;
+        case 4: //sets boolean to false, terminating the program
+        running = false;
+        break;
           }
     }
   }
