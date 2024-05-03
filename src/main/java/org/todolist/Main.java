@@ -3,9 +3,7 @@ package org.todolist;
 import org.todolist.actions.Actions;
 import org.todolist.db.Todolist;
 import org.todolist.util.Util;
-
-import java.io.*;
-import java.util.List;
+import java.util.Arraylist;
 
 public class Main {
   public static void main(String[] args) {
