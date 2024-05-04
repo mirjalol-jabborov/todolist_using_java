@@ -95,7 +95,7 @@ public class Actions {
   }
   
   public List<Todolist.Task> deleteTodos(List<Todolist.Task> tasks) {
-    if (tasks.isEmpty()) {
+    if (tasks == null || tasks.isEmpty()) {
       util.printToAlertEmpty();
       return tasks;
     }
@@ -130,7 +130,6 @@ public class Actions {
   }
 
   public List<Todolist.Task> editTodoName(List<Todolist.Task> tasks) {
-
     viewTodoList(tasks);
     util.printALine();
     System.out.print("Type the Todo index you want to edit: ");
@@ -185,12 +184,12 @@ public class Actions {
     System.out.print("Enter a new description for the todo: ");
     String todoDescription = scanner.nextLine();
     tasks.get(index).setDescription(todoDescription);
+
     return tasks;
   }
 
   public List<Todolist.Task> editTodos(List<Todolist.Task> tasks) {
-
-    if (tasks.isEmpty()) {
+    if (tasks == null || tasks.isEmpty()) {
       util.printToAlertEmpty();
       return tasks;
     }
