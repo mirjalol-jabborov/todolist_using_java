@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.List;
 
 public class Main {
-  public static void main(String[] args) throws FileNotFoundException {
+  public static void main(String[] args) {
     Util util = new Util();
     Actions actions = new Actions();
     List<Todolist.Task> tasks = new Todolist().getTasks();
