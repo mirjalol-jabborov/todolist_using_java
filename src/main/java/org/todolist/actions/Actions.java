@@ -3,23 +3,22 @@ package org.todolist.actions;
 import org.todolist.db.Todolist;
 import org.todolist.util.Util;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Actions {
-  Util util = new Util();
+  Scanner scanner = new Scanner(System.in);
 
   public List<Todolist.Task> viewTodoList(List<Todolist.Task> tasks) {
     if (tasks == null || tasks.isEmpty()) {
-      util.printToAlertEmpty();
+      Util.printToAlertEmpty();
       return tasks;
     }
 
-    util.printALine();
+    Util.printALine();
     System.out.println("Here are your todos:");
-    util.printALine();
+    Util.printALine();
 
     for (int i = 0; i < tasks.size(); i++) {
       System.out.println(i + " - " + tasks.get(i).getTitle() + ": " + tasks.get(i).getDescription());
@@ -35,14 +34,13 @@ public class Actions {
 
     Todolist.Task task = new Todolist.Task();
 
-    util.printALine();
+    Util.printALine();
     System.out.print("Enter a name for the new todo: ");
 
-    Scanner scanner = new Scanner(System.in);
     String todoTitle = scanner.nextLine();
 
     if (todoTitle.trim().isEmpty()) {
-      int userChoice = util.userChoice("The new todo name is empty, would you like to re-enter it?");
+      int userChoice = Util.userChoice("The new todo name is empty, would you like to re-enter it?");
 
       switch (userChoice) {
         case 1:
@@ -68,14 +66,13 @@ public class Actions {
 
   public List<Todolist.Task> deleteTodoWithIndex(List<Todolist.Task> tasks) {
     viewTodoList(tasks);
-    util.printALine();
+    Util.printALine();
     System.out.print("Type the Todo index you want to delete: ");
 
-    Scanner scanner = new Scanner(System.in);
-    int index = scanner.nextInt();
+    int index = Util.intScanner(scanner);
 
-    if(tasks.size() - 1 < index || index < 0){
-      int userChoice = util.userChoice("You entered the wrong index! Would you like to re-enter it?");
+    if (tasks.size() - 1 < index || index < 0) {
+      int userChoice = Util.userChoice("You entered the wrong index! Would you like to re-enter it?");
 
       switch (userChoice) {
         case 1:
@@ -93,16 +90,16 @@ public class Actions {
 
     return tasks;
   }
-  
+
   public List<Todolist.Task> deleteTodos(List<Todolist.Task> tasks) {
     if (tasks == null || tasks.isEmpty()) {
-      util.printToAlertEmpty();
+      Util.printToAlertEmpty();
       return tasks;
     }
 
-    util.printALine();
-    System.out.println("Which way you want to delete?");
-    int userChoice = util.userChoice( "Delete with index:", "Delete all todos");
+    Util.printALine();
+    System.out.println("Which way do you want to delete?");
+    int userChoice = Util.userChoice("Delete an individual one:", "Delete all todos:");
 
     switch (userChoice) {
       case 1:
@@ -113,7 +110,7 @@ public class Actions {
         System.out.println("All todos deleted.");
         break;
       default:
-        int userItemChoice = util.userChoice("You entered number! Would you like to re-enter it?");
+        int userItemChoice = Util.userChoice("You entered number! Would you like to re-enter it?");
 
         switch (userItemChoice) {
           case 1:
@@ -131,15 +128,14 @@ public class Actions {
 
   public List<Todolist.Task> editTodoName(List<Todolist.Task> tasks) {
     viewTodoList(tasks);
-    util.printALine();
+    Util.printALine();
     System.out.print("Type the Todo index you want to edit: ");
 
-    Scanner scanner = new Scanner(System.in);
-    int index = scanner.nextInt();
+    int index = Util.intScanner(scanner);
     scanner.nextLine();
 
-    if(tasks.size() - 1 < index || index < 0){
-      int userChoice = util.userChoice("Invalid Index! Would you like to re-enter it?");
+    if (tasks.size() - 1 < index || index < 0) {
+      int userChoice = Util.userChoice("Invalid Index! Would you like to re-enter it?");
 
       switch (userChoice) {
         case 1:
@@ -151,7 +147,7 @@ public class Actions {
       }
     }
 
-    util.printALine();
+    Util.printALine();
     System.out.print("Enter a new name for the todo: ");
     String todoTitle = scanner.nextLine();
     tasks.get(index).setTitle(todoTitle);
@@ -160,15 +156,14 @@ public class Actions {
 
   public List<Todolist.Task> editTodoDescription(List<Todolist.Task> tasks) {
     viewTodoList(tasks);
-    util.printALine();
+    Util.printALine();
     System.out.print("Type the Todo index you want to edit: ");
 
-    Scanner scanner = new Scanner(System.in);
-    int index = scanner.nextInt();
+    int index = Util.intScanner(scanner);
     scanner.nextLine();
 
-    if(tasks.size() - 1 < index || index < 0){
-      int userChoice = util.userChoice("Invalid Index! Would you like to re-enter it?");
+    if (tasks.size() - 1 < index || index < 0) {
+      int userChoice = Util.userChoice("Invalid Index! Would you like to re-enter it?");
 
       switch (userChoice) {
         case 1:
@@ -180,7 +175,7 @@ public class Actions {
       }
     }
 
-    util.printALine();
+    Util.printALine();
     System.out.print("Enter a new description for the todo: ");
     String todoDescription = scanner.nextLine();
     tasks.get(index).setDescription(todoDescription);
@@ -190,13 +185,13 @@ public class Actions {
 
   public List<Todolist.Task> editTodos(List<Todolist.Task> tasks) {
     if (tasks == null || tasks.isEmpty()) {
-      util.printToAlertEmpty();
+      Util.printToAlertEmpty();
       return tasks;
     }
 
-    util.printALine();
+    Util.printALine();
     System.out.println("What would you like to edit?");
-    int userChoice = util.userChoice( "Edit todo name", "Edit todo description");
+    int userChoice = Util.userChoice("Edit todo name", "Edit todo description");
 
     switch (userChoice) {
       case 1:
@@ -206,7 +201,7 @@ public class Actions {
         tasks = editTodoDescription(tasks);
         return tasks;
       default:
-        int userItemChoice = util.userChoice("You entered number! Would you like to re-enter it?");
+        int userItemChoice = Util.userChoice("You entered number! Would you like to re-enter it?");
 
         switch (userItemChoice) {
           case 1:
